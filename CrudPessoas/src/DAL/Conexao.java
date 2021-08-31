@@ -15,7 +15,7 @@ public class Conexao
         {
             if (con == null || con.isClosed())
             {
-                con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ALPOO", "sa1", "unip");
+                con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ALPOO", "sa", "unip");
             }
         }
         catch (SQLException e)

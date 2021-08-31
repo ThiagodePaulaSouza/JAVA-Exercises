@@ -34,7 +34,8 @@ public class PessoaDAO
         }
         catch (Exception e)
         {
-            this.mensagem = e.getMessage();
+            this.mensagem = "erro de gravação no BD"; // para cliente
+            //this.mensagem = e.getMessage();  para desenvolvimento
         }
     }
     
