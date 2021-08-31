@@ -20,7 +20,7 @@ public class Conexao
         }
         catch (SQLException e)
         {
-            this.mensagem = "Erro de conexão com o BD";
+            this.mensagem = e.getMessage();
         }
         return con;
     }

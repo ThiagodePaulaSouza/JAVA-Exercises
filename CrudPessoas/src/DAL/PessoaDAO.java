@@ -15,15 +15,22 @@ public class PessoaDAO
         try
         {
             Connection con = conexao.conectar();
-            String comSql = "insert into Pessoas (nome, rg, cpf)"
+            if (conexao.getMensagem().equals(""))
+            {    
+                String comSql = "insert into Pessoas (nome, rg, cpf)"
                     + "values(?,?,?)";
-            PreparedStatement stmt = con.prepareStatement(comSql);
-            stmt.setString(1, pessoa.getNome());
-            stmt.setString(2, pessoa.getRg());
-            stmt.setString(3, pessoa.getCpf());
-            stmt.execute();
-            conexao.desconectar();
-            this.mensagem = "Pessoa cadastrada com sucesso!!";
+                PreparedStatement stmt = con.prepareStatement(comSql);
+                stmt.setString(1, pessoa.getNome());
+                stmt.setString(2, pessoa.getRg());
+                stmt.setString(3, pessoa.getCpf());
+                stmt.execute();
+                conexao.desconectar();
+                this.mensagem = "Pessoa cadastrada com sucesso!!";
+            }
+            else{
+                this.mensagem = conexao.getMensagem();
+            }
+            
         }
         catch (Exception e)
         {
