@@ -8,7 +8,7 @@ public class CrudPessoas {
     {
         PessoaDAO pessoaDao = new PessoaDAO();
         Pessoa pessoa = new Pessoa();
-        pessoa.setNome("marcelo da silva");
+        pessoa.setNome("marcelin do porco");
         pessoa.setRg("2222222222");
         pessoa.setCpf("1111111111");
         pessoaDao.cadastrarPessoa(pessoa);
