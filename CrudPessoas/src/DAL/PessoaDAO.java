@@ -23,7 +23,7 @@ public class PessoaDAO
             stmt.setString(3, pessoa.getCpf());
             stmt.execute();
             conexao.desconectar();
-            this.mensagem = "Pessoa cadastrada com sucesso!";
+            this.mensagem = "Pessoa cadastrada com sucesso!!";
         }
         catch (Exception e)
         {
