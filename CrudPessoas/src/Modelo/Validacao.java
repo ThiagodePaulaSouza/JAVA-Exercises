@@ -15,12 +15,12 @@ public class Validacao
         if (dadosPessoa.get(1).length() < 3 ||
                 dadosPessoa.get(1).length() > 50) //NOME
         {
-            this.mensagem += "Nome deve ter de 3 a 50 caracteres";
+            this.mensagem += "Nome deve ter de 3 a 50 caracteres\n";
         }
         if (dadosPessoa.get(2).length() < 9) //RG
-            this.mensagem += "RG inválido";
+            this.mensagem += "RG inválido\n";
         if (dadosPessoa.get(3).length() < 11) //CPF
-            this.mensagem += "CPF inválido";
+            this.mensagem += "CPF inválido\n";
             
     }
     
@@ -41,7 +41,7 @@ public class Validacao
         if (nome.length() < 3 ||
                 nome.length() > 50) //NOME
         {
-            this.mensagem += "Nome deve ter de 3 a 50 caracteres";
+            this.mensagem += "Nome deve ter de 3 a 50 caracteres\n";
         }
     }
     
