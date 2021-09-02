@@ -5,6 +5,7 @@ import java.util.List;
 public class Validacao
 {
     private String mensagem;
+    private Integer id;
     
     public void validarDadosPessoa(List<String> dadosPessoa)
     {
@@ -29,7 +30,7 @@ public class Validacao
         this.mensagem = "";
         try
         {
-            Integer id = Integer.parseInt(numeroId); //ID
+            this.id = Integer.parseInt(numeroId); //ID
         }
         catch (Exception e)
         {
@@ -43,22 +44,8 @@ public class Validacao
         {
             this.mensagem += "Nome deve ter de 3 a 50 caracteres\n";
         }
+        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     public String getMensagem()
     {
         return mensagem;
@@ -67,6 +54,11 @@ public class Validacao
     public void setMensagem(String mensagem)
     {
         this.mensagem = mensagem;
+    }
+
+    public Integer getId()
+    {
+        return id;
     }
     
 }
