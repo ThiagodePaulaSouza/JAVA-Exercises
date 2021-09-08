@@ -39,7 +39,7 @@ public class PessoaDAO
         catch (Exception e)
         {
             this.mensagem = "erro de gravação no BD";                           // para o cliente
-            //this.mensagem = e.getMessage();  para desenvolvimento
+            //this.mensagem = e.getMessage();                                   //para desenvolvimento
         }
     }
 
@@ -86,7 +86,7 @@ public class PessoaDAO
         catch (Exception e)
         {
             this.mensagem = "erro de leitura no BD";                            // para o cliente
-            //this.mensagem = e.getMessage();  para desenvolvimento
+            //this.mensagem = e.getMessage();                                   //para desenvolvimento
         }
         return pessoa;
     }
