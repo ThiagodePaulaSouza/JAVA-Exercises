@@ -42,7 +42,22 @@ public class Controle
 
     public Pessoa pesquisarPessoaPorId(String numeroId)
     {
-        return null;
+        this.mensagem = "";
+        Validacao validacao = new Validacao();
+        validacao.validarIDPessoa(numeroId);
+        Pessoa pessoa = new Pessoa();
+        if (validacao.getMensagem().equals(""))
+        {
+            pessoa.setId(validacao.getId());
+            PessoaDAO pessoaDAO = new PessoaDAO();
+            pessoa = pessoaDAO.pesquisarPessoaPorId(pessoa);
+            this.mensagem = pessoaDAO.getMensagem();
+        }
+        else
+        {
+            this.mensagem = validacao.getMensagem();
+        }
+        return pessoa;
     }
 
     public List<Pessoa> pesquisarPessoaPorNome(String nome)

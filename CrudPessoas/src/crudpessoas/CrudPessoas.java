@@ -2,6 +2,7 @@ package crudpessoas;
 
 import Apresentacao.frmPrincipal;
 import DAL.PessoaDAO;
+import Modelo.Controle;
 import Modelo.Pessoa;
 
 public class CrudPessoas {
@@ -12,16 +13,15 @@ public class CrudPessoas {
 //        frmP.setVisible(true);
         
         Pessoa pessoa = new Pessoa();
-        pessoa.setId(3);
-        PessoaDAO pessoaDAO = new PessoaDAO();
-        pessoa = pessoaDAO.pesquisarPessoaPorId(pessoa);
-        if (pessoaDAO.getMensagem().equals(""))
+        Controle controle = new Controle();
+        pessoa = controle.pesquisarPessoaPorId("3");
+        if (controle.getMensagem().equals(""))
         {
             System.out.println(pessoa.getId() + " " + pessoa.getNome() + "\n" +
                     pessoa.getRg() + " " + pessoa.getCpf());
         }
         else
-            System.out.println(pessoaDAO.getMensagem());
+            System.out.println(controle.getMensagem());
     }
     
 }
