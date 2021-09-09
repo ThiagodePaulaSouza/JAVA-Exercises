@@ -158,6 +158,9 @@ public class frmPesquisarEditarExcluir extends javax.swing.JDialog
         else
         {
             JOptionPane.showMessageDialog(null, controle.getMensagem());
+            txvNome.setText("");
+            txvRg.setText("");
+            txvCpf.setText("");
         }
     }//GEN-LAST:event_btnPesquisarPorIdActionPerformed
 

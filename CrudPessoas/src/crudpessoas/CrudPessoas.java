@@ -1,5 +1,6 @@
 package crudpessoas;
 
+import Apresentacao.frmPesquisarEditarExcluir;
 import Apresentacao.frmPrincipal;
 
 public class CrudPessoas {
