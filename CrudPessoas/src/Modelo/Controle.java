@@ -32,7 +32,25 @@ public class Controle
 
     public void editarPessoa(List<String> dadosPessoa)
     {
+        this.mensagem = "";
+        Validacao validacao = new Validacao();
+        validacao.validarDadosPessoa(dadosPessoa);
+        if (validacao.getMensagem().equals(""))
+        {
+            Pessoa pessoa = new Pessoa();
+            pessoa.setId(validacao.getId());
+            pessoa.setNome(dadosPessoa.get(1));
+            pessoa.setRg(dadosPessoa.get(2));
+            pessoa.setCpf(dadosPessoa.get(3));
 
+            PessoaDAO pessoaDao = new PessoaDAO();
+            pessoaDao.editarPessoa(pessoa);
+            this.mensagem = pessoaDao.getMensagem();
+        }
+        else
+        {
+            this.mensagem = validacao.getMensagem();
+        }
     }
 
     public void excluirPessoa(String numeroId)

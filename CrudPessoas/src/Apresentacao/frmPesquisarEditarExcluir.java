@@ -7,6 +7,8 @@ package Apresentacao;
 
 import Modelo.Controle;
 import Modelo.Pessoa;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -73,6 +75,13 @@ public class frmPesquisarEditarExcluir extends javax.swing.JDialog
         lblCpf.setText("CPF");
 
         btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,6 +172,18 @@ public class frmPesquisarEditarExcluir extends javax.swing.JDialog
             txvCpf.setText("");
         }
     }//GEN-LAST:event_btnPesquisarPorIdActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnEditarActionPerformed
+    {//GEN-HEADEREND:event_btnEditarActionPerformed
+        Controle controle = new Controle();
+        List<String> dadosPessoas = new ArrayList<>();
+        dadosPessoas.add(txvId.getText());
+        dadosPessoas.add(txvNome.getText());
+        dadosPessoas.add(txvRg.getText());
+        dadosPessoas.add(txvCpf.getText());
+        controle.editarPessoa(dadosPessoas);
+        JOptionPane.showMessageDialog(null, controle.getMensagem());
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     /**
      * @param args the command line arguments
