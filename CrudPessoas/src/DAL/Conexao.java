@@ -1,10 +1,12 @@
 package DAL;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexao
 {
+
     public Connection con;
     private String mensagem;
 
@@ -39,10 +41,12 @@ public class Conexao
             this.mensagem = "Erro ao fechar conexão com o BD";
         }
     }
+
     public String getMensagem()
     {
         return mensagem;
     }
+
     public void setMensagem(String mensagem)
     {
         this.mensagem = mensagem;
