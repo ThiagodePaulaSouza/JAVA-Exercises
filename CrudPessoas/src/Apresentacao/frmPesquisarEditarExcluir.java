@@ -6,6 +6,7 @@
 package Apresentacao;
 
 import Modelo.Controle;
+import Modelo.Estaticos;
 import Modelo.Pessoa;
 import java.util.ArrayList;
 import java.util.List;
@@ -225,21 +226,23 @@ public class frmPesquisarEditarExcluir extends javax.swing.JDialog
     private void btnPesquisarPorNomeActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnPesquisarPorNomeActionPerformed
     {//GEN-HEADEREND:event_btnPesquisarPorNomeActionPerformed
         Controle controle = new Controle();
-        List<Pessoa> listaPessoa = controle.pesquisarPessoaPorNome(txvNome.getText());
-        if (listaPessoa.size() == 0)
+        List<Pessoa> listaPessoas = controle.pesquisarPessoaPorNome(txvNome.getText());
+        if (listaPessoas.size() == 0)
         {
             JOptionPane.showMessageDialog(null, "Não existe registros com esta pesquisa");
         }
-        if (listaPessoa.size() == 1)
+        if (listaPessoas.size() == 1)
         {
-            txvId.setText(String.valueOf(listaPessoa.get(0).getId()));
-            txvNome.setText(listaPessoa.get(0).getNome());
-            txvRg.setText(listaPessoa.get(0).getRg());
-            txvCpf.setText(listaPessoa.get(0).getCpf());
+            txvId.setText(String.valueOf(listaPessoas.get(0).getId()));
+            txvNome.setText(listaPessoas.get(0).getNome());
+            txvRg.setText(listaPessoas.get(0).getRg());
+            txvCpf.setText(listaPessoas.get(0).getCpf());
         }
-        if (listaPessoa.size() > 1)
+        if (listaPessoas.size() > 1)
         {
-
+            Estaticos.listaPessoas = listaPessoas;
+            frmSelecao frmS = new frmSelecao(null, true);
+            frmS.setVisible(true);
         }
         if (!controle.getMensagem().equals(""))
         {
