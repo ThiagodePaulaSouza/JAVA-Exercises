@@ -56,6 +56,7 @@ public class frmSelecao extends javax.swing.JDialog
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Seleção de Pessoa");
 
+        tblPesquisarPessoa.setBackground(java.awt.SystemColor.text);
         tblPesquisarPessoa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
@@ -69,6 +70,15 @@ public class frmSelecao extends javax.swing.JDialog
                 "ID", "Nome", "RG", "CPF"
             }
         ));
+        tblPesquisarPessoa.setGridColor(new java.awt.Color(85, 15, 115));
+        tblPesquisarPessoa.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblPesquisarPessoa.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                tblPesquisarPessoaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblPesquisarPessoa);
 
         btnOK.setText("OK");
@@ -111,6 +121,15 @@ public class frmSelecao extends javax.swing.JDialog
     {//GEN-HEADEREND:event_btnOKActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnOKActionPerformed
+
+    private void tblPesquisarPessoaMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_tblPesquisarPessoaMouseClicked
+    {//GEN-HEADEREND:event_tblPesquisarPessoaMouseClicked
+        int linha = tblPesquisarPessoa.getSelectedRow();
+        Estaticos.pessoa.setId((int) tblPesquisarPessoa.getValueAt(linha, 0));
+        Estaticos.pessoa.setNome((String) tblPesquisarPessoa.getValueAt(linha, 1));
+        Estaticos.pessoa.setRg((String) tblPesquisarPessoa.getValueAt(linha, 2));
+        Estaticos.pessoa.setCpf((String) tblPesquisarPessoa.getValueAt(linha, 3));
+    }//GEN-LAST:event_tblPesquisarPessoaMouseClicked
 
     /**
      * @param args the command line arguments
