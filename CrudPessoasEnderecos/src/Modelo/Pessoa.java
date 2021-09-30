@@ -1,5 +1,8 @@
 package Modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pessoa
 {
 
@@ -7,6 +10,17 @@ public class Pessoa
     private String nome;
     private String rg;
     private String cpf;
+    private List<Enderecos> listaEnderecos = new ArrayList<>();
+
+    public List<Enderecos> getListaEnderecos()
+    {
+        return listaEnderecos;
+    }
+
+    public void setListaEnderecos(List<Enderecos> listaEnderecos)
+    {
+        this.listaEnderecos = listaEnderecos;
+    }
 
     public int getId()
     {
