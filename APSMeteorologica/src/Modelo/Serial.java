@@ -1,10 +1,13 @@
 package Modelo;
 
+import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
 import gnu.io.SerialPortEvent;
 import gnu.io.SerialPortEventListener;
 import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.util.Enumeration;
 
 public class Serial implements SerialPortEventListener
 {
@@ -19,30 +22,95 @@ public class Serial implements SerialPortEventListener
 
     private String serialPortName = "COM3"; //fazer menu para deixar variavel - COM = emula serial emcima de usb
 
-    
     public boolean iniciaSerial()
     {
-        //abre porta serial
-        return false; //a ser mudado
+        boolean status = false;
+        try
+        {
+            CommPortIdentifier portId = null;
+            Enumeration portEnum = CommPortIdentifier.getPortIdentifiers();
+            while (portId == null && portEnum.hasMoreElements())
+            {
+                CommPortIdentifier currentPortId = (CommPortIdentifier) portEnum.nextElement();
+                if (currentPortId.getName().equals(serialPortName))
+                {
+                    serialPort = (SerialPort) currentPortId.open(appName, TIME_OUT);
+                    break;
+                }
+            }
+            if (portId == null || serialPort == null)
+                return false;
+            serialPort.setSerialPortParams(DATA_RATE, serialPort.DATABITS_8,
+                    serialPort.STOPBITS_1, serialPort.PARITY_NONE);
+            serialPort.addEventListener(this);
+            serialPort.notifyOnDataAvailable(true);
+            status = true;
+            try
+            {
+                Thread.sleep(1000);
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();//imprime mensagem de erro
+                status = false;
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();//imprime mensagem de erro
+            status = false;
+        }
+        return status;
     }
 
-    public void sendData()
+    public void sendData(String data)
     {
-
+        //n vai ser utilizado
+        try
+        {
+            output = serialPort.getOutputStream();
+            output.write(data.getBytes());//como o serial é uma comunicação binaria tem que ser transformado em bytes
+        }
+        catch (Exception e)
+        {
+            System.err.println(e.toString());
+        }
     }
 
-    public synchronized void close()
+    public synchronized void close()//sempre que tiver conexão serial precisa do synchronized
     {
         //fecha porta serial
+        serialPort.removeEventListener();
+        serialPort.close();
     }
 
     @Override
     public void serialEvent(SerialPortEvent spe)
     {
-
+        //se tiver alguma coius na porta ele dispara esse kra
+        try
+        {
+            switch(spe.getEventType()){
+                case SerialPortEvent.DATA_AVAILABLE:
+                    if (input == null)
+                    {
+                        input = new BufferedReader(new InputStreamReader(serialPort.getInputStream()));
+                    }
+                    if (input.ready())
+                    {
+                        protocolo.setLeituraComando(input.readLine());
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();//imprime mensagem de erro
+        }
     }
-    
-    
+
     public SerialPort getSerialPort()
     {
         return serialPort;
