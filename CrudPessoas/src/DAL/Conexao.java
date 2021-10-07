@@ -8,7 +8,7 @@ public class Conexao
 {
 
     public Connection con;
-    private String mensagem;
+    public String mensagem;
 
     public Connection conectar()
     {
@@ -17,7 +17,7 @@ public class Conexao
         {
             if (con == null || con.isClosed())
             {
-                con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ALPOO", "sa", "unip");
+                con = DriverManager.getConnection("jdbc:mysql://mysql873.umbler.com:41890/thiagoestacao", "thiagoestacaobd", "Thiago3213");
             }
         }
         catch (SQLException e)
