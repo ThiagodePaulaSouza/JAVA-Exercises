@@ -35,11 +35,14 @@ public class Serial implements SerialPortEventListener
                 if (currentPortId.getName().equals(serialPortName))
                 {
                     serialPort = (SerialPort) currentPortId.open(appName, TIME_OUT);
+                    portId = currentPortId;
                     break;
                 }
             }
             if (portId == null || serialPort == null)
+            {
                 return false;
+            }
             serialPort.setSerialPortParams(DATA_RATE, serialPort.DATABITS_8,
                     serialPort.STOPBITS_1, serialPort.PARITY_NONE);
             serialPort.addEventListener(this);
@@ -90,7 +93,8 @@ public class Serial implements SerialPortEventListener
         //se tiver alguma coius na porta ele dispara esse kra
         try
         {
-            switch(spe.getEventType()){
+            switch (spe.getEventType())
+            {
                 case SerialPortEvent.DATA_AVAILABLE:
                     if (input == null)
                     {
