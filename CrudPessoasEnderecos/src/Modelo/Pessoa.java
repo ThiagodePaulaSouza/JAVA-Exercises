@@ -10,14 +10,14 @@ public class Pessoa
     private String nome;
     private String rg;
     private String cpf;
-    private List<Enderecos> listaEnderecos = new ArrayList<>();
+    private List<Endereco> listaEnderecos = new ArrayList<>();
 
-    public List<Enderecos> getListaEnderecos()
+    public List<Endereco> getListaEnderecos()
     {
         return listaEnderecos;
     }
 
-    public void setListaEnderecos(List<Enderecos> listaEnderecos)
+    public void setListaEnderecos(List<Endereco> listaEnderecos)
     {
         this.listaEnderecos = listaEnderecos;
     }

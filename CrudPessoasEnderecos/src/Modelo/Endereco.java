@@ -1,5 +1,5 @@
 package Modelo;
-public class Enderecos
+public class Endereco
 {
     private int id;
     private int fk_pessoas_id;

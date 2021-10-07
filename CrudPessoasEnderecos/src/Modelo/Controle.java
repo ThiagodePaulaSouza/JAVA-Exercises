@@ -9,11 +9,18 @@ public class Controle
 
     private String mensagem;
 
-    public void cadastrarPessoa(List<String> dadosPessoa)
+    public void cadastrarPessoa(List<String> dadosPessoa, List<List<String>> listaStringEnderecos)
     {
+
         this.mensagem = "";
         Validacao validacao = new Validacao();
         validacao.validarDadosPessoa(dadosPessoa);
+
+        for (List<String> listaEnd : listaStringEnderecos)
+        {
+            validacao.validarEndereco(listaEnd);
+        }
+
         if (validacao.getMensagem().equals(""))
         {
             Pessoa pessoa = new Pessoa();
@@ -21,6 +28,19 @@ public class Controle
             pessoa.setNome(dadosPessoa.get(1));
             pessoa.setRg(dadosPessoa.get(2));
             pessoa.setCpf(dadosPessoa.get(3));
+
+            List<Endereco> listaEnderecos = new ArrayList<>();
+            for (List<String> listaE : listaStringEnderecos)
+            {
+                Endereco end = new Endereco();
+                end.setLogradouro(listaE.get(0));
+                end.setNumero(listaE.get(1));
+                end.setBairro(listaE.get(2));
+                end.setCidade(listaE.get(3));
+                listaEnderecos.add(end);
+            }
+
+            pessoa.setListaEnderecos(listaEnderecos);
 
             PessoaDAO pessoaDao = new PessoaDAO();
             pessoaDao.cadastrarPessoa(pessoa);

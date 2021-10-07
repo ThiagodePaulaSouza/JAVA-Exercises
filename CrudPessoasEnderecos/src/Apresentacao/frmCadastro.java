@@ -36,6 +36,7 @@ public class frmCadastro extends javax.swing.JDialog
     private void initComponents()
     {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         lblNome = new javax.swing.JLabel();
         txfNome = new javax.swing.JTextField();
         lblRg = new javax.swing.JLabel();
@@ -43,6 +44,26 @@ public class frmCadastro extends javax.swing.JDialog
         lblCpf = new javax.swing.JLabel();
         txfCpf = new javax.swing.JTextField();
         btnCadastrar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        tbpEnderecos = new javax.swing.JTabbedPane();
+        tblEnderecoResidencial = new javax.swing.JPanel();
+        lblLogradouroResidencial = new javax.swing.JLabel();
+        txfLogradouroResidencial = new javax.swing.JTextField();
+        lblNumeroResidencial = new javax.swing.JLabel();
+        txfNumeroResidencial = new javax.swing.JTextField();
+        lblBairroResidencial = new javax.swing.JLabel();
+        txfBairroResidencial = new javax.swing.JTextField();
+        lblCidadeResidencial = new javax.swing.JLabel();
+        txfCidadeResidencial = new javax.swing.JTextField();
+        tblEnderecoComercial = new javax.swing.JPanel();
+        lblLogradouroComercial = new javax.swing.JLabel();
+        txfLogradouroComercial = new javax.swing.JTextField();
+        lblNumeroComercial = new javax.swing.JLabel();
+        txfNumeroComercial = new javax.swing.JTextField();
+        lblBairroComercial = new javax.swing.JLabel();
+        txfBairroComercial = new javax.swing.JTextField();
+        lblCidadeComercial = new javax.swing.JLabel();
+        txfCidadeComercial = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Pessoa");
@@ -70,32 +91,147 @@ public class frmCadastro extends javax.swing.JDialog
             }
         });
 
+        jLabel1.setText("Enderecos");
+
+        lblLogradouroResidencial.setText("Logradouro");
+
+        lblNumeroResidencial.setText("Número");
+
+        lblBairroResidencial.setText("Bairro");
+
+        lblCidadeResidencial.setText("Cidade");
+
+        javax.swing.GroupLayout tblEnderecoResidencialLayout = new javax.swing.GroupLayout(tblEnderecoResidencial);
+        tblEnderecoResidencial.setLayout(tblEnderecoResidencialLayout);
+        tblEnderecoResidencialLayout.setHorizontalGroup(
+            tblEnderecoResidencialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tblEnderecoResidencialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tblEnderecoResidencialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txfLogradouroResidencial)
+                    .addGroup(tblEnderecoResidencialLayout.createSequentialGroup()
+                        .addGroup(tblEnderecoResidencialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNumeroResidencial)
+                            .addComponent(lblLogradouroResidencial)
+                            .addComponent(txfNumeroResidencial, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                        .addGroup(tblEnderecoResidencialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblBairroResidencial)
+                            .addComponent(txfBairroResidencial, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(tblEnderecoResidencialLayout.createSequentialGroup()
+                        .addGroup(tblEnderecoResidencialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCidadeResidencial)
+                            .addComponent(txfCidadeResidencial, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        tblEnderecoResidencialLayout.setVerticalGroup(
+            tblEnderecoResidencialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tblEnderecoResidencialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLogradouroResidencial)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txfLogradouroResidencial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(tblEnderecoResidencialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNumeroResidencial)
+                    .addComponent(lblBairroResidencial))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tblEnderecoResidencialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txfNumeroResidencial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfBairroResidencial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(lblCidadeResidencial)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txfCidadeResidencial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        tbpEnderecos.addTab("Residencial", tblEnderecoResidencial);
+
+        lblLogradouroComercial.setText("Logradouro");
+
+        lblNumeroComercial.setText("Número");
+
+        lblBairroComercial.setText("Bairro");
+
+        lblCidadeComercial.setText("Cidade");
+
+        javax.swing.GroupLayout tblEnderecoComercialLayout = new javax.swing.GroupLayout(tblEnderecoComercial);
+        tblEnderecoComercial.setLayout(tblEnderecoComercialLayout);
+        tblEnderecoComercialLayout.setHorizontalGroup(
+            tblEnderecoComercialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tblEnderecoComercialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tblEnderecoComercialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txfLogradouroComercial)
+                    .addGroup(tblEnderecoComercialLayout.createSequentialGroup()
+                        .addGroup(tblEnderecoComercialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNumeroComercial)
+                            .addComponent(lblLogradouroComercial)
+                            .addComponent(txfNumeroComercial, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                        .addGroup(tblEnderecoComercialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblBairroComercial)
+                            .addComponent(txfBairroComercial, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(tblEnderecoComercialLayout.createSequentialGroup()
+                        .addGroup(tblEnderecoComercialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCidadeComercial)
+                            .addComponent(txfCidadeComercial, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        tblEnderecoComercialLayout.setVerticalGroup(
+            tblEnderecoComercialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tblEnderecoComercialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblLogradouroComercial)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txfLogradouroComercial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(tblEnderecoComercialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNumeroComercial)
+                    .addComponent(lblBairroComercial))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tblEnderecoComercialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txfNumeroComercial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfBairroComercial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(lblCidadeComercial)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txfCidadeComercial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        tbpEnderecos.addTab("Comercial", tblEnderecoComercial);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(153, 153, 153)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCadastrar)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNome)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(lblNome))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(tbpEnderecos, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txfNome, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txfRg, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblRg))
                                 .addGap(67, 67, 67)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblCpf)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(lblCpf)
                                     .addComponent(txfCpf))))
                         .addContainerGap(21, Short.MAX_VALUE))))
         );
@@ -115,8 +251,12 @@ public class frmCadastro extends javax.swing.JDialog
                     .addComponent(txfRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txfCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tbpEnderecos, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(btnCadastrar)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -135,8 +275,27 @@ public class frmCadastro extends javax.swing.JDialog
         dadosPessoa.add(txfNome.getText());
         dadosPessoa.add(txfRg.getText());
         dadosPessoa.add(txfCpf.getText());
+        
+        List<String> enderecoResidencial = new ArrayList<>();
+        List<String> enderecoComercial = new ArrayList<>();
+        
+        enderecoResidencial.add(txfLogradouroResidencial.getText());
+        enderecoResidencial.add(txfNumeroResidencial.getText());
+        enderecoResidencial.add(txfBairroResidencial.getText());
+        enderecoResidencial.add(txfCidadeResidencial.getText());
+        
+        enderecoComercial.add(txfLogradouroComercial.getText());
+        enderecoComercial.add(txfNumeroComercial.getText());
+        enderecoComercial.add(txfBairroComercial.getText());
+        enderecoComercial.add(txfCidadeComercial.getText());
+        
+        List<List<String>> listaEnderecos = new ArrayList<>();
+        listaEnderecos.add(enderecoResidencial);
+        listaEnderecos.add(enderecoComercial);
+        
+        
         Controle controle = new Controle();
-        controle.cadastrarPessoa(dadosPessoa);
+        controle.cadastrarPessoa(dadosPessoa, listaEnderecos);
         JOptionPane.showMessageDialog(null, controle.getMensagem());
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
@@ -200,11 +359,32 @@ public class frmCadastro extends javax.swing.JDialog
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblBairroComercial;
+    private javax.swing.JLabel lblBairroResidencial;
+    private javax.swing.JLabel lblCidadeComercial;
+    private javax.swing.JLabel lblCidadeResidencial;
     private javax.swing.JLabel lblCpf;
+    private javax.swing.JLabel lblLogradouroComercial;
+    private javax.swing.JLabel lblLogradouroResidencial;
     private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblNumeroComercial;
+    private javax.swing.JLabel lblNumeroResidencial;
     private javax.swing.JLabel lblRg;
+    private javax.swing.JPanel tblEnderecoComercial;
+    private javax.swing.JPanel tblEnderecoResidencial;
+    private javax.swing.JTabbedPane tbpEnderecos;
+    private javax.swing.JTextField txfBairroComercial;
+    private javax.swing.JTextField txfBairroResidencial;
+    private javax.swing.JTextField txfCidadeComercial;
+    private javax.swing.JTextField txfCidadeResidencial;
     private javax.swing.JTextField txfCpf;
+    private javax.swing.JTextField txfLogradouroComercial;
+    private javax.swing.JTextField txfLogradouroResidencial;
     private javax.swing.JTextField txfNome;
+    private javax.swing.JTextField txfNumeroComercial;
+    private javax.swing.JTextField txfNumeroResidencial;
     private javax.swing.JTextField txfRg;
     // End of variables declaration//GEN-END:variables
 }
