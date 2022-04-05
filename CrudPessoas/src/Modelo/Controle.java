@@ -1,10 +1,12 @@
 package Modelo;
 
 import DAL.PessoaDAO;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Controle
 {
+
     private String mensagem;
 
     public void cadastrarPessoa(List<String> dadosPessoa)
@@ -55,7 +57,21 @@ public class Controle
 
     public void excluirPessoa(String numeroId)
     {
-
+        this.mensagem = "";
+        Validacao validacao = new Validacao();
+        validacao.validarIDPessoa(numeroId);
+        Pessoa pessoa = new Pessoa();
+        if (validacao.getMensagem().equals(""))
+        {
+            PessoaDAO pessoaDAO = new PessoaDAO();
+            pessoa.setId(validacao.getId());
+            pessoaDAO.excluirPessoa(pessoa);
+            this.mensagem = pessoaDAO.getMensagem();
+        }
+        else
+        {
+            this.mensagem = validacao.getMensagem();
+        }
     }
 
     public Pessoa pesquisarPessoaPorId(String numeroId)
@@ -80,7 +96,23 @@ public class Controle
 
     public List<Pessoa> pesquisarPessoaPorNome(String nome)
     {
-        return null;
+        this.mensagem = "";
+        Validacao validacao = new Validacao();
+        validacao.validarNomePessoa(nome);
+        Pessoa pessoa = new Pessoa();
+        List<Pessoa> listaPessoas = new ArrayList<>();
+        if (validacao.getMensagem().equals(""))
+        {
+            pessoa.setNome(nome);
+            PessoaDAO pessoaDAO = new PessoaDAO();
+            listaPessoas = pessoaDAO.pesquisarPessoaPorNome(pessoa);
+            this.mensagem = pessoaDAO.getMensagem();
+        }
+        else
+        {
+            this.mensagem = validacao.getMensagem();
+        }
+        return listaPessoas;
     }
 
     public String getMensagem()

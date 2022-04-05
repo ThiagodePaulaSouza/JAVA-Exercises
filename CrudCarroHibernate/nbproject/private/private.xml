@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/Apresentacao/frmSelecao.java</file>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/Apresentacao/frmPrincipal.java</file>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/Modelo/Validacao.java</file>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/Apresentacao/frmPesquisarEditarExcluir.java</file>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/DAL/HibernateUtil.java</file>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/Modelo/Controle.java</file>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/DAL/Conexao.java</file>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/DAL/CarroDAO.java</file>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/Modelo/Estaticos.java</file>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/Modelo/Carro.java</file>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/crudcarros/CrudCarros.java</file>
+            <file>file:/C:/Users/55159/Desktop/CrudCarroHibernate/src/Apresentacao/frmCadastro.java</file>
+        </group>
+    </open-files>
+</project-private>
