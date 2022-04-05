@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Calculadora">
+  <ClassDiagramComponents>
+    <Class name="Calcular" package="" visibility="public" xPosition="40.0" yPosition="61.0">
+      <Fields>
+        <Field name="numero1" type="Double" visibility="public"/>
+        <Field name="numero2" type="Double" visibility="public"/>
+        <Field name="operacao" type="String" visibility="public"/>
+        <Field name="resultado" type="String" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="resolver" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Validacao" package="" visibility="public" xPosition="300.0" yPosition="23.0">
+      <Fields>
+        <Field name="num1" type="String" visibility="public"/>
+        <Field name="num2" type="String" visibility="public"/>
+        <Field name="numero1" type="Double" visibility="public"/>
+        <Field name="numero2" type="Double" visibility="public"/>
+        <Field name="mensagem" type="String" visibility="public"/>
+        <Field name="operacao" type="String" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="validar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Controle" package="" visibility="public" xPosition="169.0" yPosition="274.0">
+      <Fields>
+        <Field name="num1" type="String" visibility="public"/>
+        <Field name="num2" type="String" visibility="public"/>
+        <Field name="mensagem" type="String" visibility="public"/>
+        <Field name="operacao" type="String" visibility="public"/>
+        <Field name="resultado" type="String" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="executar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="Controle" target="Calcular" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Controle" target="Validacao" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
